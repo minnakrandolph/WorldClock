@@ -13,9 +13,14 @@ body {
     border-radius: 10px;
 }
 
+.city {
+    display: flex;
+}
+
 select {
     display: block;
     width: 100%;
+    font-size: 18px;
     border-radius: 4px;
     padding: 10px;
 }
