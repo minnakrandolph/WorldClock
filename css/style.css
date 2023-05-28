@@ -23,6 +23,12 @@ body {
     font-weight: bold;
 }
 
+.time small {
+    font-size: 18px;
+    vertical-align: middle;
+    line-height: 36px;
+}
+
 select {
     display: block;
     width: 100%;
