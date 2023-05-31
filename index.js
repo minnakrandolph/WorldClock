@@ -1,3 +1,3 @@
 let losAngelesElement = document.querySelector("#los-angeles");
 
-losAngelesElement.innerHTML = "Happy Coding!";
+losAngelesElement.innerHTML = "#los-Angeles";
