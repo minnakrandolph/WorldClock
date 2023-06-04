@@ -24,6 +24,19 @@ parisTimeElement.innerHTML = parisTime.format(
     "h:mm:ss [<small>]A[</small>]"
     );
   }
+
+  //mexico city
+let mexicoCityElement = document.querySelector("#mexico-city");
+if (mexicoCityElement) {
+let mexicoCityDateElement = parisElement.querySelector(".date");
+let mexicoCityTimeElement = parisElement.querySelector(".time");
+let mexicoCityTime = moment().tz("America/Mexico_City");
+
+mexicoCityDateElement.innerHTML = mexicoCityTime.format("MMMM Do YYYY");
+mexicoCityTimeElement.innerHTML = mexicoCityTime.format(
+    "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 //cities on the dropdown menu 
 function updateCity(event) {
