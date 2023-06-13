@@ -24,6 +24,7 @@ parisTimeElement.innerHTML = parisTime.format(
     "h:mm:ss [<small>]A[</small>]"
     );
   }
+}
 
   //mexico city
 //let mexicoCityElement = document.querySelector("#mexico-city");
@@ -37,7 +38,10 @@ parisTimeElement.innerHTML = parisTime.format(
  //   "h:mm:ss [<small>]A[</small>]"
 //    );
 //  }
-}
+//}
+
+    
+
 //cities on the dropdown menu 
 function updateCity(event) {
     let cityTimeZone = event.target.value;
@@ -45,7 +49,17 @@ function updateCity(event) {
         cityTimeZone = moment.tz.guess()
     }
     let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-    let cityTime = moment().tz(cityTimeZone);
+    
+    clearInterval(countInterval);
+    updateCityTime(cityName, cityTimeZone);
+    countInterval = setInterval(() => {
+      updateCityTime(cityName, cityTimeZone);
+    }, 1000);
+  }
+
+function updateCityTime(cityName, cityTimeZone) {   
+let cityTime = moment().tz(cityTimeZone); 
+
     let citiesElement = document.querySelector("#cities");
     citiesElement.innerHTML =  `
     <div class="city">
